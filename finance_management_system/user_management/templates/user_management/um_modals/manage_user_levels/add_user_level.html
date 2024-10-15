@@ -1,0 +1,496 @@
+<div
+  class="modal fade"
+  id="add_user_level_modal"
+  tabindex="-1"
+  aria-labelledby="add_user_level_modal_Label"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="add_user_level_modal_Label">
+          Add User Level
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body text-dark">
+        <form autocomplete="off">
+          <div class="mb-3 ms-2 me-2">
+            <label for="user_level" class="form-label">User Level</label>
+            <input
+              type="text"
+              name="user_level"
+              id="user_level"
+              class="form-control"
+              placeholder="Enter user level"
+            />
+          </div>
+
+          <div class="mb-3 ms-2 me-2">
+            <label for="user_level_description" class="form-label"
+              >Description</label
+            >
+            <input
+              type="text"
+              name="user_level_description"
+              id="user_level_description"
+              class="form-control"
+              placeholder="Enter user level description"
+            />
+          </div>
+
+          <div class="mb-3 ms-2 me-2">
+            <label class="form-label">Privileges</label>
+            <div class="mb-2 ms-2 me-2">
+              <input
+                type="radio"
+                name="privileges"
+                id="full_access"
+                value="full_access"
+                class="form-check-input me-1"
+              />
+              <label for="full_access">Full Access</label>
+            </div>
+
+            <div class="mb-2 ms-2 me-2">
+              <input
+                type="radio"
+                name="privileges"
+                id="custom_access"
+                value="custom_access"
+                class="form-check-input me-1"
+              />
+              <label for="custom_access">Custom Access</label>
+            </div>
+          </div>
+
+          <!-- Accordion for custom access -->
+          <div
+            id="custom_access_accordion"
+            class="accordion d-none mb-2 ms-2 me-2"
+          >
+            <!-- Financial Dashboard -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Financial Dashboard
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingOne"
+                data-bs-parent="#custom_access_accordion"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <input type="checkbox" id="view_dashboard" checked />
+                    <label for="view_dashboard">View Dashboard</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="export_charts" />
+                    <label for="export_charts">Export Charts</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Financial Tracking -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Financial Tracking
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#custom_access_accordion"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <input type="checkbox" id="view_revenue_tracking" checked />
+                    <label for="view_revenue_tracking"
+                      >View Revenue Tracking</label
+                    >
+                  </div>
+                  <div>
+                    <input type="checkbox" id="view_expense_tracking" checked />
+                    <label for="view_expense_tracking"
+                      >View Expense Tracking</label
+                    >
+                  </div>
+                  <div>
+                    <input type="checkbox" id="view_profit_tracking" checked />
+                    <label for="view_profit_tracking"
+                      >View Profit Tracking</label
+                    >
+                  </div>
+                  <div>
+                    <input type="checkbox" id="export_tracking" />
+                    <label for="export_tracking"
+                      >Export Revenue, Expense, Profit Tracking</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Book -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Book
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#custom_access_accordion"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <input type="checkbox" id="view_books" checked />
+                    <label for="view_books">View Books</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="export_books" />
+                    <label for="export_books">Export Books</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Manage Books -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  Manage Books
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#custom_access_accordion"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <input type="checkbox" id="view_manage_books" checked />
+                    <label for="view_manage_books">View Books</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="create_books" />
+                    <label for="create_books">Create Books</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="_books_action_buttons" />
+                    <label for="_books_action_buttons"
+                      >Action Buttons (Edit, Archive, and Restore)
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Manage Book Types -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  Manage Book Types
+                </button>
+              </h2>
+              <div
+                id="collapseFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFive"
+                data-bs-parent="#custom_access_accordion"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <input type="checkbox" id="view_book_types" checked />
+                    <label for="view_book_types">View Book Types</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="create_book_types" />
+                    <label for="create_book_types">Create Book Types</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="book_types_action_buttons" />
+                    <label for="book_types_action_buttons"
+                      >Action Buttons (Edit and Delete)</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chart of Accounts -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSix">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSix"
+                  aria-expanded="false"
+                  aria-controls="collapseSix"
+                >
+                  Chart of Accounts
+                </button>
+              </h2>
+              <div
+                id="collapseSix"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingSix"
+                data-bs-parent="#custom_access_accordion"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <input type="checkbox" id="view_accounts" checked />
+                    <label for="view_accounts">View Accounts</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="create_accounts" />
+                    <label for="create_accounts">Create Accounts</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="account_action_buttons" />
+                    <label for="edit_accounts"
+                      >Action Buttons (Edit, Deactivate, and Activate)</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Journal Entries -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSeven">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeven"
+                  aria-expanded="false"
+                  aria-controls="collapseSeven"
+                >
+                  Journal Entries
+                </button>
+              </h2>
+              <div
+                id="collapseSeven"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingSeven"
+                data-bs-parent="#custom_access_accordion"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <input type="checkbox" id="view_journal_entries" checked />
+                    <label for="view_journal_entries"
+                      >View Journal Entries</label
+                    >
+                  </div>
+                  <div>
+                    <input type="checkbox" id="create_journal_entries" />
+                    <label for="create_journal_entries"
+                      >Create Journal Entries</label
+                    >
+                  </div>
+                  <div>
+                    <input type="checkbox" id="review_journal_entries" />
+                    <label for="review_journal_entries"
+                      >Review and Approve Journal Entries</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- General Ledger -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingEight">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseEight"
+                  aria-expanded="false"
+                  aria-controls="collapseEight"
+                >
+                  General Ledger
+                </button>
+              </h2>
+              <div
+                id="collapseEight"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingEight"
+                data-bs-parent="#custom_access_accordion"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <input type="checkbox" id="view_general_ledger" checked />
+                    <label for="view_general_ledger">View General Ledger</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="export_general_ledger" />
+                    <label for="export_general_ledger"
+                      >Export General Ledger</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Financial Report -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingNine">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseNine"
+                  aria-expanded="false"
+                  aria-controls="collapseNine"
+                >
+                  Financial Reports
+                </button>
+              </h2>
+              <div
+                id="collapseNine"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingNine"
+                data-bs-parent="#custom_access_accordion"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <input type="checkbox" id="view_reports" checked />
+                    <label for="view_reports">View Financial Report</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="generate_report" />
+                    <label for="generate_report"
+                      >Generate Financial Report</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Audit Logs -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTen">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTen"
+                  aria-expanded="false"
+                  aria-controls="collapseTen"
+                >
+                  Audit Logs
+                </button>
+              </h2>
+              <div
+                id="collapseTen"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTen"
+                data-bs-parent="#custom_access_accordion"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <input type="checkbox" id="view_audit_logs" checked />
+                    <label for="view_audit_logs">View Audit Logs</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="export_audit_logs" />
+                    <label for="export_audit_logs">Export Audit Logs</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- User Management -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingEleven">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseEleven"
+                  aria-expanded="false"
+                  aria-controls="collapseEleven"
+                >
+                  User Management
+                </button>
+              </h2>
+              <div
+                id="collapseEleven"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingEleven"
+                data-bs-parent="#custom_access_accordion"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <input type="checkbox" id="um_all_functionalities" />
+                    <label for="um_all_functionalities"
+                      >All Functionalities</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

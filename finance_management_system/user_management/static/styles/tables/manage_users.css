@@ -1,0 +1,28 @@
+.add_user_button {
+  background-color: var(
+    --red-color
+  ); /* Change button background to desired color */
+  color: white; /* Button text color */
+  border: none; /* Remove default borders */
+  padding: 8px 12px; /* Padding for button */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  font-size: 16px; /* Font size */
+}
+
+.add_user_button:hover {
+  background-color: #a31218; /* Slightly darker color on hover */
+}
+
+.paging_custom {
+  background-color: var(--red-color);
+  color: var(--red-color);
+}
+
+i {
+  margin-right: 0.7rem;
+}
+
+.delete_button {
+  background-color: var(--red-color);
+}

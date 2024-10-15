@@ -1,0 +1,77 @@
+finance_system_v2/
+|
++---finance_management_system/
+|   |
+|   +---finance_management_system/
+|   |   |
+|   |   +---settings.py
+|   |   |
+|   |   +---urls.py
+|   |   |
+|   |   +---__init__.py
+|   |   |
+|   |   +---wsgi.py
+|   |   |
+|   |   +---asgi.py
+|   |
+|   +---fms/
+|   |   |
+|   |   +---urls.py
+|   |   |
+|   |   +---__init__.py
+|   |   |
+|   |   +---admin.py
+|   |   |
+|   |   +---apps.py
+|   |   |
+|   |   +---test.py
+|   |   |
+|   |   +---migrations/
+|   |   |   |
+|   |   |   +---__init__.py
+|   |   |
+|   |   +---static/
+|   |   |
+|   |   +---templates/
+|   |   |
+|   |   +---views/
+|   |   |   |   
+|   |   |   |   
+|   |   |   +---coa/
+|   |   |       |
+|   |   |       +---add_account.py
+|   |   +---views.py
+|   |   |
+|   |   +---models/
+|   |   |   | 
+|   |   |   +---__init__.py
+|   |   |   | 
+|   |   |   +---coa_model.py 
+|   |   
+|   +---user_management_system/
+|   |   |
+|   |   +---migrations/
+|   |   |   |
+|   |   |   +---__init__.py
+|   |   |
+|   |   +---views/
+|   |   |
+|   |   +---templates/
+|   |   |
+|   |   +---static/
+|   |   |
+|   |   +---models/
+|   |   |
+|   |   +---tests.py
+|   |   |
+|   |   +---apps.py
+|   |   |
+|   |   +---admin.py
+|   |   |
+|   |   +---__init__.py
+|   |   |
+|   |   +---urls.py
+|   |
+|   +---manage.py
+|   
++---fmsv2-env/

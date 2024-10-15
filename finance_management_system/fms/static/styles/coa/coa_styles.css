@@ -1,0 +1,13 @@
+.deactivate_button {
+  background-color: var(--red-color);
+}
+
+.activate_button {
+  background-color: var(--green-color);
+  border-color: transparent;
+}
+
+.edit_button:hover {
+  background-color: var(--darker-yellow-color);
+  border-color: transparent;
+}

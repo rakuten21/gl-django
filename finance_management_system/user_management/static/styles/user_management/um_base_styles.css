@@ -1,0 +1,16 @@
+.modal-title {
+  color: var(--red-color);
+}
+
+.red_button {
+  background-color: var(--red-color);
+}
+
+.gray_button {
+  background-color: var(--grey-color);
+}
+
+#manage_users_table tbody tr:hover td:not(:last-child) {
+  text-decoration: underline;
+  cursor: pointer; /* Make the cursor a pointer */
+}

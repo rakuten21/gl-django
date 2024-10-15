@@ -1,0 +1,64 @@
+<h2 class="tab_panel_title mb-3">Manage Privileges</h2>
+
+<div class="d-flex justify-content-between">
+  <div>
+    <button
+      id="addPrivilegeButton"
+      class="add_privilege_button custom_button add_button"
+      data-bs-toggle="modal"
+      data-bs-target="#add_privilege_modal"
+    >
+      <i class="fa-solid fa-plus add_icon"></i>
+      Add privilege
+    </button>
+  </div>
+</div>
+
+<table
+  id="manage_user_privileges_table"
+  class="table table-bordered border-dark mt-3"
+>
+  <thead class="border-dark">
+    <tr>
+      <th class="text-center text-white" style="background-color: #c8131a">
+        Account Code
+      </th>
+      <th class="text-center text-white" style="background-color: #c8131a">
+        Account Description
+      </th>
+      <th class="text-center text-white" style="background-color: #c8131a">
+        Account Type
+      </th>
+      <th class="text-center text-white" style="background-color: #c8131a">
+        Nature of Log
+      </th>
+      <th class="text-center text-white" style="background-color: #c8131a">
+        Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider text-center">
+    <tr>
+      <td>a</td>
+      <td>a</td>
+      <td>a</td>
+      <td>a</td>
+      <td>
+        <button
+          class="btn btn-warning edit_button"
+          data-bs-toggle="modal"
+          data-bs-target="#edit_privilege_modal"
+        >
+          <i class="fa-solid fa-pen-to-square"></i>Edit
+        </button>
+        <button
+          class="btn btn-danger delete_button"
+          data-bs-toggle="modal"
+          data-bs-target="#delete_privilege_modal"
+        >
+          <i class="fa-solid fa-trash-can"></i>Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{% block title %}{% endblock %} | Passenger Seat</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'images/tab_img.png' %}"
+    />
+
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
+
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Fontawesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.1.7/b-3.1.2/b-html5-3.1.2/b-print-3.1.2/fh-4.0.1/kt-2.12.1/r-3.0.3/sl-2.1.0/sr-1.4.1/datatables.min.css"
+    />
+
+    {% block head %}{% endblock %}
+  </head>
+
+  <body>
+    <!-- up to you if you want to use svg or cdn -->
+    <!-- navbar -->
+    <nav class="ps_navbar">{% include 'base/navbar.html' %}</nav>
+    <!-- end of navbar -->
+
+    <!-- sidebar -->
+    <nav class="ps_sidebar">{% include 'base/sidebar.html' %}</nav>
+
+    <!-- main content wrapper -->
+    <div class="main_content_wrapper">
+      <div class="main_content">{% block content %}{% endblock %}</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{% static 'scripts/base.js' %}"></script>
+
+    <!-- JQuery -->
+    <!-- <script src="{% static 'scripts/jquery-3.7.1.js' %}"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.1.7/b-3.1.2/b-html5-3.1.2/b-print-3.1.2/fh-4.0.1/kt-2.12.1/r-3.0.3/sl-2.1.0/sr-1.4.1/datatables.min.js"></script>
+
+    <!-- script for bootstrap tab listening -->
+    <script src="{% static 'scripts/coa/coa_table.js' %}"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

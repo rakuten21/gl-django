@@ -1,0 +1,84 @@
+{% extends "base/base.html" %} {% load static %}
+<title>{% block title %} Manage Books {%endblock %}</title>
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/base_styles.css' %}" />
+<link rel="stylesheet" href="{% static 'styles/bm/bm_styles.css' %}" />
+{% endblock %} {% block content %}
+
+<main>
+  <ul class="nav nav-tabs custom_tabs">
+    <li class="nav-item">
+      <a
+        href="#manage_books"
+        class="nav-link active"
+        id="manage_books_tab"
+        data-bs-toggle="tab"
+      >
+        <i class="fa-brands fa-readme"></i> Manage Books
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a
+        href="#archived_books"
+        class="nav-link"
+        id="archived_books_tab"
+        data-bs-toggle="tab"
+      >
+        <i class="fa-solid fa-box-archive"></i> Archived Books
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a
+        href="#manage_book_types"
+        class="nav-link"
+        id="manage_book_types_tab"
+        data-bs-toggle="tab"
+      >
+        <i class="fa-solid fa-list-ul"></i> Manage Book Types
+      </a>
+    </li>
+  </ul>
+
+  <div class="tab-content pt-3">
+    <div
+      class="tab-pane fade show active"
+      id="manage_books"
+      role="tabpanel"
+      aria-labelledby="manage_books_tab"
+    >
+      {% include 'bm/bm_manage_books.html' %}
+    </div>
+
+    <div
+      class="tab-pane fade"
+      id="archived_books"
+      role="tabpanel"
+      aria-labelledby="archived_books_tab"
+    >
+      {% include 'bm/bm_archived_books.html' %}
+    </div>
+
+    <div
+      class="tab-pane fade"
+      id="manage_book_types"
+      role="tabpanel"
+      aria-labelledby="manage_book_types_tab"
+    >
+      {% include 'bm/bm_manage_types.html' %}
+    </div>
+  </div>
+</main>
+
+{% endblock %} {% block scripts %}
+
+<!-- script for datatable for manage books -->
+<script src="{% static 'scripts/bm/bm_manage_books.js' %}"></script>
+
+<!-- script for datatable for manage book types -->
+<script src="{% static 'scripts/bm/bm_manage_types.js' %}"></script>
+
+<!-- script for datatable for archived books -->
+<script src="{% static 'scripts/bm/bm_archived_books.js' %}"></script>
+{% endblock %}

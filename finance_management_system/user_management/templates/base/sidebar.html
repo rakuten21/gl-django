@@ -1,0 +1,113 @@
+{% load static %}
+
+<div class="menu_content">
+  <ul class="menu_items">
+    <div class="menu_title menu_dahsboard"></div>
+    <!-- dashboard -->
+    <li class="item">
+      <a href="#" class="nav_link">
+        <span class="navlink_icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </span>
+        <span class="navlink">Dashboard</span>
+      </a>
+    </li>
+    <!-- end -->
+
+    <!-- financial tracking -->
+    <li class="item">
+      <div href="#" class="nav_link submenu_item">
+        <span class="navlink_icon">
+          <i class="fa-solid fa-coins"></i>
+        </span>
+        <span class="navlink">Financial Tracking</span>
+        <i class="bx bx-chevron-right arrow-left"></i>
+      </div>
+
+      <ul class="menu_items submenu">
+        <a href="#" class="nav_link sublink">Revenue Tracking</a>
+        <a href="#" class="nav_link sublink">Expense Tracking</a>
+        <a href="#" class="nav_link sublink">Profit Revenue</a>
+      </ul>
+    </li>
+    <!-- end -->
+  </ul>
+  <!-- end -->
+
+  <ul class="menu_items">
+    <div class="menu_title menu_ledger"></div>
+    <!-- books management -->
+
+    <!-- financial tracking -->
+    <li class="item">
+      <div href="#" class="nav_link submenu_item">
+        <span class="navlink_icon">
+          <i class="fa-solid fa-book"></i>
+        </span>
+        <span class="navlink">Books Management</span>
+        <i class="bx bx-chevron-right arrow-left"></i>
+      </div>
+
+      <ul class="menu_items submenu">
+        <a href="{% url 'manage_books' %}" class="nav_link sublink">Books</a>
+        <a href="{% url 'manage_books' %}" class="nav_link sublink"
+          >Manage Books</a
+        >
+      </ul>
+    </li>
+    <!-- end -->
+
+    <!-- chart of accounts -->
+    <li class="item">
+      <a href="{% url 'chart_of_accounts' %}" class="nav_link">
+        <span class="navlink_icon">
+          <i class="fa-solid fa-clipboard-list"></i>
+        </span>
+        <span class="navlink">Chart of Accounts</span>
+      </a>
+    </li>
+    <!-- end -->
+
+    <!-- journal entries -->
+    <li class="item">
+      <a href="#" class="nav_link">
+        <span class="navlink_icon">
+          <i class="fa-solid fa-pen"></i>
+        </span>
+        <span class="navlink">Journal Entry</span>
+      </a>
+    </li>
+    <li class="item">
+      <a href="#" class="nav_link">
+        <span class="navlink_icon">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+        </span>
+        <span class="navlink">General Ledger</span>
+      </a>
+    </li>
+    <!-- end -->
+
+    <!-- financial reporting -->
+    <li class="item">
+      <a href="#" class="nav_link">
+        <span class="navlink_icon">
+          <i class="fa-solid fa-file-arrow-down"></i>
+        </span>
+        <span class="navlink">Financial Reporting</span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="menu_items">
+    <div class="menu_title menu_setting"></div>
+    <!-- manage users -->
+    <li class="item">
+      <a href="{% url 'user_management' %}" class="nav_link">
+        <span class="navlink_icon">
+          <i class="fa-solid fa-users"></i>
+        </span>
+        <span class="navlink">User Management</span>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,61 @@
+{% extends "base/base.html" %} {% load static %}
+<title>{% block title %} Chart of Accounts {%endblock %}</title>
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/base_styles.css' %}" />
+<link rel="stylesheet" href="{% static 'styles/coa/coa_styles.css' %}" />
+{% endblock %} {% block content %}
+
+<main>
+  <ul class="nav nav-tabs custom_tabs">
+    <li class="nav-item">
+      <a
+        href="#accounts"
+        class="nav-link active"
+        id="accounts_tab"
+        data-bs-toggle="tab"
+      >
+        <i class="fa-solid fa-list-ol"></i> Accounts
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a
+        href="#deactivated_accounts"
+        class="nav-link"
+        id="deactivated_accounts_tab"
+        data-bs-toggle="tab"
+      >
+        <i class="fa-solid fa-folder-minus"></i>Deactivated Accounts
+      </a>
+    </li>
+  </ul>
+
+  <div class="tab-content pt-3">
+    <div
+      class="tab-pane fade show active"
+      id="accounts"
+      role="tabpanel"
+      aria-labelledby="accounts_tab"
+    >
+      {% include 'coa/coa_tables/coa_list.html' %}
+    </div>
+
+    <div
+      class="tab-pane fade"
+      id="deactivated_accounts"
+      role="tabpanel"
+      aria-labelledby="deactivated_accounts_tab"
+    >
+      {% include 'coa/coa_tables/deactivated_accounts.html' %}
+    </div>
+  </div>
+</main>
+
+{% endblock %} {% block scripts %}
+
+<!-- script for datatable for chart of accounts -->
+<script src="{% static 'scripts/coa/coa_list.js' %}"></script>
+
+<!-- script for datatable for deactivated accounts -->
+<script src="{% static 'scripts/coa/deactivated_accounts.js' %}"></script>
+{% endblock %}

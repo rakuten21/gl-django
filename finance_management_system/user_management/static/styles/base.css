@@ -1,0 +1,205 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --white-color: #fff;
+  --red-color: #c8131a;
+  --grey-color: #525252;
+  --grey-color-light: #aaa;
+}
+body {
+  background-color: #fdf8ed !important;
+  transition: all 0.5s ease !important;
+}
+
+/* navbar */
+.ps_navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  z-index: 1000;
+  box-shadow: 0 0 2px var(--grey-color-light);
+}
+.ps_logo_item {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--red-color);
+}
+.ps_navbar img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+.breadcrumb {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--grey-color);
+  font-size: 16px;
+}
+
+.breadcrumb a:hover {
+  color: var(--red-color);
+}
+
+.breadcrumb i {
+  margin-right: 5px;
+}
+
+.ps_navbar_content {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+}
+.ps_navbar_content i {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--white-color);
+  background-color: var(--red-color);
+  padding: 13px 15px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.ps_navbar_content i:hover {
+  opacity: 0.85;
+}
+
+/* sidebar */
+.ps_sidebar {
+  background-color: var(--white-color);
+  width: 310px;
+  position: fixed;
+  top: 2rem;
+  left: 0;
+  height: 100%;
+  padding: 80px 20px;
+  z-index: 100;
+  overflow-y: scroll;
+  box-shadow: 0 0 1px var(--grey-color-light);
+  transition: all 0.5s ease;
+}
+.ps_sidebar::-webkit-scrollbar {
+  display: none;
+}
+.menu_content {
+  position: relative;
+}
+.menu_title {
+  margin: 15px 0;
+  padding: 0 20px;
+  font-size: 18px;
+}
+.menu_title::before {
+  color: var(--grey-color);
+  white-space: nowrap;
+}
+.menu_dahsboard::before {
+  color: var(--red-color);
+  content: "Overview";
+}
+.menu_ledger::before {
+  color: var(--red-color);
+  content: "General Ledger";
+}
+.menu_setting::before {
+  color: var(--red-color);
+  content: "Setting";
+}
+.menu_items {
+  padding: 0;
+  list-style: none;
+}
+.navlink_icon {
+  position: relative;
+  font-size: 22px;
+  min-width: 50px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 6px;
+}
+.navlink_icon::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: calc(100% + 100px);
+  left: -20px;
+}
+.navlink_icon:hover {
+  background: var(--red-color);
+}
+.ps_sidebar .nav_link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--grey-color);
+  white-space: nowrap;
+}
+.nav_link:hover {
+  color: var(--white-color);
+  background: var(--red-color);
+}
+.submenu_item {
+  cursor: pointer;
+}
+.submenu {
+  max-height: 0; /* Initially collapsed */
+  overflow: hidden;
+  margin-left: 0.9rem;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+.submenu.show {
+  max-height: 300px; /* Max height large enough to accommodate submenu items */
+  opacity: 1;
+}
+.submenu_item .arrow-left {
+  position: absolute;
+  right: 10px;
+  font-size: 22px;
+  display: inline-block;
+  margin-right: auto;
+  transition: transform 0.3s ease; /* Add smooth transition */
+}
+.submenu_item .arrow-left {
+  transform: rotate(0deg);
+}
+
+.submenu_item .arrow-left.rotate {
+  transform: rotate(90deg); /* Rotate 270 degrees to point upwards */
+}
+
+.submenu .sublink {
+  padding: 15px 15px 15px 52px;
+}
+
+.main_content_wrapper {
+  margin-top: 80px; /* Adjust for navbar height */
+  margin-left: 310px; /* Adjust for sidebar width */
+  padding: 20px; /* Optional: for some padding inside */
+  z-index: 1; /* Ensure the content is on top */
+  min-height: 100vh; /* Ensure the content area covers the full height */
+}

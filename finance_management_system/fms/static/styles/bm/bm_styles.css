@@ -1,0 +1,15 @@
+.archive_button,
+.delete_button {
+  background-color: var(--red-color);
+}
+
+.restore_button {
+  background-color: var(--green-color);
+  border-color: transparent;
+  color: var(--white-color);
+}
+
+.edit_button:hover {
+  background-color: var(--darker-yellow-color);
+  border-color: transparent;
+}
