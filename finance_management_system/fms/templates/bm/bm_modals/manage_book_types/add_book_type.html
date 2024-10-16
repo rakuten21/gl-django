@@ -1,0 +1,43 @@
+<div
+  class="modal fade"
+  id="add_book_type_modal"
+  tabindex="-1"
+  aria-labelledby="add_book_type_modal_Label"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="add_book_type_modal_Label">Add a Book Type</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body text-dark">
+        <form autocomplete="off">
+            <div class="mb-3 ms-2 me-2">
+                <label for="book_type_name" class="form-label"> Book Name </label>
+                <input type="text" name="book_type_name" id="book_name" class="form-control" placeholder="Enter book name">
+            </div>
+
+            <div class="mb-3 ms-2 me-2">
+                <label for="book_type" class="form-label"> Book Type </label>
+                <select name="book_type" id="book_type" class="form-select">
+                    <option selected disabled>Choose book type</option>
+                    <option value=""></option>
+                </select>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary gray_button" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-danger red_button">Save Book</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>

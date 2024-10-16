@@ -1,0 +1,19 @@
+full name - table
+email address - table
+username - table
+password
+user title - table
+user level - table
+date time created
+date time updated
+
+user level - table
+description - table
+privileges - table
+specific privileges 
+
+account code
+account description
+account type - asset, liability, equity, revenue, expenses
+nature of log
+account status

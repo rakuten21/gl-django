@@ -21,16 +21,13 @@
   <thead class="border-dark">
     <tr>
       <th class="text-center text-white" style="background-color: #c8131a">
-        Account Code
+        User Level
       </th>
       <th class="text-center text-white" style="background-color: #c8131a">
-        Account Description
+        Description
       </th>
       <th class="text-center text-white" style="background-color: #c8131a">
-        Account Type
-      </th>
-      <th class="text-center text-white" style="background-color: #c8131a">
-        Nature of Log
+        User Level Privileges
       </th>
       <th class="text-center text-white" style="background-color: #c8131a">
         Actions
@@ -39,7 +36,6 @@
   </thead>
   <tbody class="table-group-divider text-center">
     <tr>
-      <td>a</td>
       <td>a</td>
       <td>a</td>
       <td>a</td>
@@ -52,7 +48,7 @@
           <i class="fa-solid fa-pen-to-square"></i>Edit
         </button>
         <button
-          class="btn btn-danger delete_button"
+          class="btn btn-danger red_button"
           data-bs-toggle="modal"
           data-bs-target="#delete_user_level_modal"
         >
@@ -63,5 +59,16 @@
   </tbody>
 </table>
 
+<!-- for user level details modal -->
+
 <!-- for add user level modal -->
 {% include 'user_management/um_modals/manage_user_levels/add_user_level.html' %}
+
+<!-- for edit user level modal -->
+{% include 'user_management/um_modals/manage_user_levels/edit_level.html' %}
+
+<!-- for edit user level confirmation -->
+{% include 'user_management/um_modals/manage_user_levels/confirmation.html' %}
+
+<!-- for delete user level modal -->
+{% include 'user_management/um_modals/manage_user_levels/delete_level.html' %}

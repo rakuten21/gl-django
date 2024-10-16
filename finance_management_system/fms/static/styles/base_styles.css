@@ -94,3 +94,15 @@ main {
 i {
   margin-right: 0.5rem;
 }
+
+.red_button {
+  background-color: var(--red-color);
+}
+
+.gray_button {
+  background-color: var(--grey-color);
+}
+
+.modal-title {
+  color: var(--red-color);
+}

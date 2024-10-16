@@ -1,0 +1,65 @@
+<div
+  class="modal fade"
+  id="edit_account_modal"
+  tabindex="-1"
+  aria-labelledby="edit_account_modal_Label"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="edit_account_modal_Label">Edit an Account</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body text-dark">
+        <form autocomplete="off">
+            <div class="mb-3 ms-2 me-2">
+                <label for="account_code" class="form-label"> Account Code </label>
+                <input type="number" name="account_code" id="account_code" class="form-control" placeholder="Enter account code">
+            </div>
+
+            <div class="mb-3 ms-2 me-2">
+                <label for="account_description" class="form-label"> Account Description </label>
+                <input type="text" name="account_description" id="account_description" class="form-control" placeholder="Enter account description">
+            </div>
+
+            <div class="mb-3 ms-2 me-2">
+                <label for="account_type" class="form-label"> Account Type </label>
+                <select name="account_type" id="account_type" class="form-select">
+                    <option selected disabled>Choose account type</option>
+                    <option value="Asset">Asset</option>
+                    <option value="Liability">Liability</option>
+                    <option value="Equity">Equity</option>
+                    <option value="Revenue">Revenue</option>
+                    <option value="Expenses">Expenses</option>
+                </select>
+            </div>
+
+            <div class="mb-3 ms-2 me-2">
+            <label class="form-label">Nature of Log</label>
+            <div class="mb-1">
+                <input type="radio" name="nature_of_log" id="credit" value="Credit" class="form-check-input me-1">
+                <label for="credit" class="form-check-label">Credit</label>
+            </div>
+            <div>
+                <input type="radio" name="nature_of_log" id="debit" value="Debit" class="form-check-input me-1">
+                <label for="debit" class="form-check-label">Debit</label>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary gray_button" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-danger red_button" data-bs-toggle="modal"
+          data-bs-target="#edit_account_confirmation_modal">Save Changes</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
