@@ -21,10 +21,10 @@
   <thead class="border-dark">
     <tr>
       <th class="text-center text-white" style="background-color: #c8131a">
-        Book Type ID
+        Book Type Name
       </th>
       <th class="text-center text-white" style="background-color: #c8131a">
-        Type Name
+        Description
       </th>
       <th class="text-center text-white" style="background-color: #c8131a">
         Date Time Created
@@ -47,14 +47,14 @@
         <button
           class="btn btn-warning edit_button"
           data-bs-toggle="modal"
-          data-bs-target="#edit_book_modal"
+          data-bs-target="#edit_book_type_modal"
         >
           <i class="fa-solid fa-pen-to-square"></i>Edit
         </button>
         <button
           class="btn btn-danger delete_button"
           data-bs-toggle="modal"
-          data-bs-target="#archive_book_modal"
+          data-bs-target="#delete_book_type_modal"
         >
           <i class="fa-solid fa-trash-can"></i>Delete
         </button>
@@ -62,3 +62,15 @@
     </tr>
   </tbody>
 </table>
+
+<!-- for add book type modal -->
+{% include 'bm/bm_modals/manage_book_types/add_book_type.html' %}
+
+<!-- for edit book type modal -->
+{% include 'bm/bm_modals/manage_book_types/edit_book_type.html' %}
+
+<!-- for edit book type confirmation modal -->
+{% include 'bm/bm_modals/manage_book_types/edit_type_confirmation.html' %}
+
+<!-- for delete book type modal -->
+{% include 'bm/bm_modals/manage_book_types/delete_book_type.html' %}

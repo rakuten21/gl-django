@@ -5,11 +5,7 @@ new DataTable("#list_of_deactivated_table", {
         menu: [10, 25, 50, 100],
       },
     },
-    top9End: {
-      search: {
-        placeholder: "Search...",
-      },
-    },
+    top9End: null,
     bottomEnd: {
       paging: {
         className: "paging_custom",
@@ -46,7 +42,11 @@ new DataTable("#list_of_deactivated_table", {
         },
       ],
     },
-    topEnd: null,
+    topEnd: {
+      search: {
+        placeholder: "Search...",
+      },
+    },
   },
   language: {
     lengthMenu: "Show _MENU_ entries per page",

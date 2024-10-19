@@ -1,44 +1,42 @@
-from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.shortcuts import render
+from django.http import JsonResponse
 from fms.models import ChartOfAccounts
-from django.views.decorators.csrf import csrf_protect
+from django.utils import timezone
 
-@csrf_protect
 def add_account(request):
     if request.method == 'POST':
         account_code = request.POST.get('account_code')
         account_description = request.POST.get('account_description')
         account_type = request.POST.get('account_type')
-        account_status = request.POST.get('account_status', 'Active')
+        nature_of_log = request.POST.get('nature_of_log')
 
-        # check if the account already exists
-        if ChartOfAccounts.objects.filter(account_code=account_code).exists():
-            messages.error(request, 'Account code already exists')
-            return redirect('chart_of_accounts')
+        errors = {}
+        if not account_code:
+            errors['account_code'] = 'Account Code is required.'
+        if not account_description:
+            errors['account_description'] = 'Account Description is required.'
+        if not account_type:
+            errors['account_type'] = 'Account Type is required.'
+        if not nature_of_log:
+            errors['nature_of_log'] = 'Nature of Log is required.'
         
-        # check if the account description already exists
-        if ChartOfAccounts.objects.filter(account_description=account_description).exists():
-            messages.error(request, 'Account description already exists')
-            return redirect('chart_of_accounts')
+        if errors:
+            return JsonResponse({"success": False, "errors": errors})
         
-        # check if both the account code and description already exist
-        if ChartOfAccounts.objects.filter(account_code=account_code, account_description=account_description).exists():
-            messages.error(request, 'Account code and description already exist')
-            return redirect('chart_of_accounts')
-                
-        new_account = ChartOfAccounts(
-            account_code=account_code, 
-            account_description=account_description, 
-            account_type=account_type,
-            account_status=account_status
-        )
+        try:
+            ChartOfAccounts.objects.create(
+                account_code=account_code,
+                account_description=account_description,
+                account_type=account_type,
+                nature_of_log=nature_of_log,
+                account_status=True,
+                created_at=timezone.now(),
+                updated_at=timezone.now()
+            )
 
-        # saving the user's input
-        new_account.save()
+            return JsonResponse({"success": True})
+        
+        except Exception as e:
+            return JsonResponse({"success": False, "errors": str(e)})
 
-        # display success message
-        messages.success(request, 'Account added successfully!')
-        return redirect('chart_of_accounts')
-
-    # pass them to the template
-    return render(request, 'chart_of_accounts/coa.html')
+    return JsonResponse({"success": False, "message": "Invalid request method"})

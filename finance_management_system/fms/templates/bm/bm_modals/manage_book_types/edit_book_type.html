@@ -1,0 +1,42 @@
+<div
+  class="modal fade"
+  id="edit_book_type_modal"
+  tabindex="-1"
+  aria-labelledby="edit_book_type_modal_Label"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4" id="edit_book_type_modal_Label">Edit a Book Type</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body text-dark">
+        <form autocomplete="off">
+            <div class="mb-3 ms-2 me-2">
+                <label for="edit_book_type_name" class="form-label"> Book Type Name </label>
+                <input type="text" name="edit_book_type_name" id="edit_book_type_name" class="form-control" placeholder="Enter book type name">
+            </div>
+
+            <div class="mb-3 ms-2 me-2">
+                <label for="edit_book_type_description" class="form-label"> Description </label>
+                <textarea name="edit_book_type_description" id="edit_book_type_description" class="form-control" rows="2" placeholder="Enter book type description"></textarea>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary gray_button" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-danger red_button" 
+          data-bs-toggle="modal"
+          data-bs-target="#edit_type_confirmation_modal">Save Changes</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>

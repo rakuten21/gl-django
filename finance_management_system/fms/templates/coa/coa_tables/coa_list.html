@@ -14,10 +14,7 @@
   </div>
 </div>
 
-<table
-  id="chart_of_accounts_table"
-  class="table table-bordered border-dark mt-3"
->
+<table id="chart_of_accounts_table" class="table table-bordered border-dark">
   <thead class="border-dark">
     <tr>
       <th class="text-center text-white" style="background-color: #c8131a">
@@ -38,28 +35,32 @@
     </tr>
   </thead>
   <tbody class="table-group-divider text-center">
+    {% for account in accounts %}
     <tr>
-      <td>a</td>
-      <td>a</td>
-      <td>a</td>
-      <td>a</td>
+      <td class="text-center">{{ account.account_code }}</td>
+      <td>{{ account.account_description }}</td>
+      <td>{{ account.account_type }}</td>
+      <td>{{ account.nature_of_log }}</td>
       <td>
         <button
           class="btn btn-warning edit_button"
           data-bs-toggle="modal"
           data-bs-target="#edit_account_modal"
+          data-account-id="{{ account.id }}"
         >
-          <i class="fa-solid fa-pen-to-square"></i>Edit
+          <i class="fa-solid fa-pen-to-square"></i> Edit
         </button>
         <button
           class="btn btn-danger deactivate_button"
           data-bs-toggle="modal"
           data-bs-target="#deactivate_account_modal"
+          data-account-id="{{ account.id }}"
         >
-          <i class="fa-regular fa-circle-pause"></i>Deactivate
+          <i class="fa-regular fa-circle-pause"></i> Deactivate
         </button>
       </td>
     </tr>
+    {% endfor %}
   </tbody>
 </table>
 
