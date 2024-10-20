@@ -2,10 +2,8 @@ document.getElementById("account_code").addEventListener("input", function () {
   var accountCode = this.value;
   var accountTypeDropdown = document.getElementById("account_type");
 
-  // Get the first digit of the account code
   var firstDigit = accountCode.charAt(0);
 
-  // Map the first digit to the corresponding account type
   switch (firstDigit) {
     case "1":
       accountTypeDropdown.value = "Asset";

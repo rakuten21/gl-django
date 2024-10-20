@@ -13,10 +13,16 @@ class NatureOfLog(models.TextChoices):
     CREDIT = 'Credit', 'Credit'
 
 class ChartOfAccounts(models.Model):
-    account_code = models.IntegerField(primary_key=True)
-    account_description = models.CharField(max_length=100, unique=True) 
-    account_type = models.CharField(max_length=20, choices=AccountType.choices)
-    nature_of_log = models.CharField(max_length=10, choices=NatureOfLog.choices)
+    account_code = models.PositiveIntegerField(unique=True)
+    account_description = models.CharField(max_length=255, unique=True)
+    account_type = models.CharField(
+        max_length=20,
+        choices=AccountType.choices
+    )
+    nature_of_log = models.CharField(
+        max_length=6,
+        choices=NatureOfLog.choices
+    )
     account_status = models.BooleanField(default=True)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)

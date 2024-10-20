@@ -1,7 +1,9 @@
+# add_account.py
 from django.shortcuts import render
 from django.http import JsonResponse
 from fms.models import ChartOfAccounts
 from django.utils import timezone
+from fms.validators.coa_validators import validate_account_data
 
 def add_account(request):
     if request.method == 'POST':
@@ -10,15 +12,12 @@ def add_account(request):
         account_type = request.POST.get('account_type')
         nature_of_log = request.POST.get('nature_of_log')
 
-        errors = {}
-        if not account_code:
-            errors['account_code'] = 'Account Code is required.'
-        if not account_description:
-            errors['account_description'] = 'Account Description is required.'
-        if not account_type:
-            errors['account_type'] = 'Account Type is required.'
-        if not nature_of_log:
-            errors['nature_of_log'] = 'Nature of Log is required.'
+        # Live validation
+        if request.POST.get('live_validation'):
+            errors = validate_account_data(account_code, account_description, account_type, nature_of_log, is_live=True)
+            return JsonResponse({'success': not bool(errors), 'errors': errors})
+
+        errors = validate_account_data(account_code, account_description, account_type, nature_of_log)
         
         if errors:
             return JsonResponse({"success": False, "errors": errors})
@@ -37,6 +36,6 @@ def add_account(request):
             return JsonResponse({"success": True})
         
         except Exception as e:
-            return JsonResponse({"success": False, "errors": str(e)})
+            return JsonResponse({"success": False, "errors": "An error occurred. Please try again later."})
 
     return JsonResponse({"success": False, "message": "Invalid request method"})

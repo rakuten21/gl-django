@@ -22,7 +22,7 @@
         <form autocomplete="off" method="POST">
           {% csrf_token %}
           <div class="mb-3 ms-2 me-2">
-            <label for="account_code" class="form-label"> Account Code </label>
+            <label for="account_code" class="form-label">Account Code</label>
             <input
               type="number"
               name="account_code"
@@ -30,12 +30,13 @@
               class="form-control"
               placeholder="Enter account code"
             />
+            <div id="account_code_error" class="invalid-feedback"></div>
           </div>
 
           <div class="mb-3 ms-2 me-2">
-            <label for="account_description" class="form-label">
-              Account Description
-            </label>
+            <label for="account_description" class="form-label"
+              >Account Description</label
+            >
             <input
               type="text"
               name="account_description"
@@ -43,10 +44,11 @@
               class="form-control"
               placeholder="Enter account description"
             />
+            <div id="account_description_error" class="invalid-feedback"></div>
           </div>
 
           <div class="mb-3 ms-2 me-2">
-            <label for="account_type" class="form-label"> Account Type </label>
+            <label for="account_type" class="form-label">Account Type</label>
             <select name="account_type" id="account_type" class="form-select">
               <option selected disabled>Choose account type</option>
               <option value="Asset">Asset</option>
@@ -55,6 +57,7 @@
               <option value="Revenue">Revenue</option>
               <option value="Expense">Expense</option>
             </select>
+            <div id="account_type_error" class="invalid-feedback"></div>
           </div>
 
           <div class="mb-3 ms-2 me-2">
@@ -79,6 +82,7 @@
               />
               <label for="debit" class="form-check-label">Debit</label>
             </div>
+            <div id="nature_of_log_error" class="invalid-feedback"></div>
           </div>
         </form>
       </div>
@@ -91,11 +95,11 @@
           Cancel
         </button>
         <button
-          type="button"
+          type="submit"
           class="btn btn-danger red_button"
           data-url="{% url 'add_account' %}"
         >
-          Save Account
+          Add account
         </button>
       </div>
     </div>

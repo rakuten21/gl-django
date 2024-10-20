@@ -51,7 +51,7 @@ new DataTable("#manage_books_table", {
     topEnd: toolbar,
   },
   language: {
-    lengthMenu: "Show _MENU_ entries per page", // Custom text format
-    search: "Filter:", // Custom search box text
+    lengthMenu: "Show _MENU_ entries per page",
+    search: "Filter:",
   },
 });
