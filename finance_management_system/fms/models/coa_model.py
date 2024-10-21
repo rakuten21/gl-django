@@ -32,3 +32,4 @@ class ChartOfAccounts(models.Model):
 
     class Meta:
         db_table = 'chart_of_accounts'
+

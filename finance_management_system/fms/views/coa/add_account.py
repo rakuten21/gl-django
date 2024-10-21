@@ -14,13 +14,13 @@ def add_account(request):
 
         # Live validation
         if request.POST.get('live_validation'):
-            errors = validate_account_data(account_code, account_description, account_type, nature_of_log, is_live=True)
-            return JsonResponse({'success': not bool(errors), 'errors': errors})
+            account_errors = validate_account_data(account_code, account_description, account_type, nature_of_log, is_live=True)
+            return JsonResponse({'success': not bool(account_errors), 'errors': account_errors})
 
-        errors = validate_account_data(account_code, account_description, account_type, nature_of_log)
+        account_errors = validate_account_data(account_code, account_description, account_type, nature_of_log)
         
-        if errors:
-            return JsonResponse({"success": False, "errors": errors})
+        if account_errors:
+            return JsonResponse({"success": False, "errors": account_errors})
         
         try:
             ChartOfAccounts.objects.create(

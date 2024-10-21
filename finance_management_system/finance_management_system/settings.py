@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -82,16 +83,17 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '5Littlemonkeys',
         'HOST': 'localhost',
-    },
-    'user_management': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fms_user_management',
-        'USER': 'postgres',
-        'PASSWORD': '5Littlemonkeys',
-        'HOST': 'localhost',
     }
+    # 'user_management': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'fms_user_management',
+    #     'USER': 'postgres',
+    #     'PASSWORD': '5Littlemonkeys',
+    #     'HOST': 'localhost',
+    # }
 }
 
+DATABASES['default'] = dj_database_url.parse('postgresql://finance_management_system_user:U3uRGM6tC2NAbcc6utO7j3mlnmMHX8w2@dpg-csb1upij1k6c73cvqlu0-a.singapore-postgres.render.com/finance_management_system')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
