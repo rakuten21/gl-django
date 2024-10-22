@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-m0#*rla^-@^6cu6aq)pa84*fetshdjenz*&%v7xy190=f_*ot-'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -77,6 +77,7 @@ WSGI_APPLICATION = 'finance_management_system.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+database_url = os.environ.get("DATABASE_URL")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -94,7 +95,7 @@ DATABASES = {
     # }
 }
 
-DATABASES['default'] = dj_database_url.parse('postgresql://finance_management_system_user:U3uRGM6tC2NAbcc6utO7j3mlnmMHX8w2@dpg-csb1upij1k6c73cvqlu0-a.singapore-postgres.render.com/finance_management_system')
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 
 # Password validation
